@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Articulos</title>
+</head>
+<body>
+    <a href="{% url 'blog:index' %}">Volver</a><hr>
+
+    <h1>Articulos del Blog</h1>
+    <ul>
+        {% for articulo in articulos %}
+        <li>{{ articulo.titulo}}</li>
+        <li>{{ articulo.contenido}}</li>
+        <li>{{ articulo.fecha_publicacion}}</li>
+        <br>
+        {% empty %}
+        <li>No hay articulos disponibles</li>
+        {% endfor %}
+    </ul>
+    <hr>
+        
+</body>
+</html>
